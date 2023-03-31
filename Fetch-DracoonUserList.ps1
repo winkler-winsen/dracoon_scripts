@@ -1,5 +1,6 @@
 ﻿# Insert your FQDN here
-$url = 'https://fqdn/api/v4/auth/login'
+$DracoonFQDN='fwdn' # e.g. dracoon.domain.tld
+$url = "https://$DracoonFQDN/api/v4/auth/login"
 
 function Get-RandomString {
     param ([int]$length)
@@ -32,7 +33,7 @@ $token = ($LoginResponse.Content | ConvertFrom-Json).token
 
 # get user list
 # !!! maximum is 500. if more users, we have to use paging !!!
-$SDSResponse = Invoke-WebRequest -UseBasicParsing -Uri 'https://daten.itk-harburg.de/api/v4/users' `
+$SDSResponse = Invoke-WebRequest -UseBasicParsing -Uri "https://$DracoonFQDN/api/v4/users" `
 -WebSession $session `
 -Headers @{
     'accept'='application/json'; 
