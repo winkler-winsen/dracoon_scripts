@@ -1,5 +1,5 @@
 ﻿# Insert your FQDN here
-$DracoonFQDN='fwdn' # e.g. dracoon.domain.tld
+$DracoonFQDN='fqdn' # e.g. dracoon.domain.tld
 $url = "https://$DracoonFQDN/api/v4/auth/login"
 
 function Get-RandomString {
